@@ -1,0 +1,39 @@
+package com.database;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.Statement;
+
+public class ShowColumnName 
+{
+	public static void main(String[] args) {
+		try
+		{
+			//this line is prone to exception so we have put this in try and catch block
+			Class.forName("org.h2.Driver");//Driver provide by Database vendor. Driver is needed for java compiler to understand the relational approach of database 
+			Connection conn =DriverManager.getConnection("jdbc:h2:tcp://localhost/~/test","sa","qwerty@123");//Prone to exception so another catch block is required but we used global exception handler
+			Statement stmt = conn.createStatement();//this statement fetch data from DataBase
+			ResultSet rs = stmt.executeQuery("select * from student");//rs acts as a cursor 
+			ResultSetMetaData rsmd = rs.getMetaData();//to get the column name
+			int cc=rsmd.getColumnCount();
+			for(int i=1;i<cc;i++)
+			{
+				System.out.println(rsmd.getColumnName(i));
+			}
+			while(rs.next()){
+				System.out.print(rs.getInt(1)+"     ");
+				System.out.print(rs.getNString(2)+"     ");
+				System.out.println(rs.getNString(3)+"     ");
+			}
+			stmt.close();
+			conn.close();
+		}
+		catch(Exception e)//ClassNotFoundException
+		{
+			//ex.printStackTrace();//for specific exception
+			System.out.println("Exception Araised"+e);
+		}
+	}
+
+}

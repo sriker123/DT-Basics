@@ -1,0 +1,23 @@
+package com.Comparator;
+
+import java.util.*;
+
+public class SortByAge implements Comparator<ComparatorDemo>
+{
+	public int compare(ComparatorDemo x1,ComparatorDemo x2)
+	{
+		if(x1.age==x2.age)
+		{
+			return 0;
+		}
+		else if(x1.age<x2.age)  
+		{
+			return 1;  
+	     }
+		else
+		{
+		return -1;
+		}
+	 }
+
+}

@@ -1,0 +1,34 @@
+package com.Comparator;
+import java.util.*;
+import com.Comparator.*;
+import java.io.*;
+public class TestMain 
+{
+	public static void main(String args[])
+	{
+		ArrayList<ComparatorDemo> list = new ArrayList<ComparatorDemo>();
+		ComparatorDemo obj=new ComparatorDemo(10, "bbc", 25);
+		ComparatorDemo obj1=new ComparatorDemo(56, "ajj", 49);
+		ComparatorDemo obj2=new ComparatorDemo(23, "all", 58);
+		list.add(obj);
+		list.add(obj1);
+		list.add(obj2);
+		System.out.println("Sorted by Name");
+		Collections.sort(list,new SortByName());
+		Iterator itr = list.iterator();
+		while(itr.hasNext())
+		{
+			ComparatorDemo c = (ComparatorDemo)itr.next();
+			System.out.println(c.age+"  "+c.name);
+		}
+		System.out.println("Sorted by Age");
+		Collections.sort(list,new SortByAge());
+		Iterator itr1 = list.iterator();
+		while(itr1.hasNext())
+		{
+			ComparatorDemo c = (ComparatorDemo)itr1.next();
+			System.out.println(c.age+"  "+c.name);
+		}
+	}
+
+}

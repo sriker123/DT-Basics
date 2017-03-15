@@ -1,0 +1,16 @@
+package com.Basics3;
+
+ class Person
+{
+	/* public static void main(String[] args) {
+		System.out.println("Main from person");
+	}*/
+}
+ class Manager
+{
+	
+	public static void main(String[] args)
+	{
+		System.out.println("Main from Manager");
+	}
+}

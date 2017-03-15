@@ -1,0 +1,13 @@
+package com.Basics3;
+
+ class Person {
+
+}
+ class Manager
+{
+	
+	public static void main(String[] args)
+	{
+		
+	}
+}

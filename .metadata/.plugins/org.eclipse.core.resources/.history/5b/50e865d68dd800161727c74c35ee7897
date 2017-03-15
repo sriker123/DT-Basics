@@ -1,0 +1,18 @@
+package com.Basics2;
+
+public class InheritenceDemo 
+{
+	public InheritenceDemo()
+	{
+		//super(); called default or implicitly
+		//IIB;
+	}
+	//IIB
+	{
+		System.out.println("IIB is being called******");
+	}
+	public static void main(String[] args)
+	{
+		InheritenceDemo p1 = new InheritenceDemo();
+	}
+}

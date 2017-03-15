@@ -1,0 +1,17 @@
+package com.Basics;
+
+public class Person
+{
+	int age;//instance
+	public Person(int age)
+	{
+		age=age;
+		//this.age=age;// to know the difference see the image "this" in the same folder 
+	}
+	public static void main(String[] args) 
+	{
+		Person obj = new Person(22);
+		
+		System.out.println(obj.age);
+	}
+}
